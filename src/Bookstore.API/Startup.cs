@@ -8,9 +8,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 namespace Bookstore.API
 {
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext<BookStoreDbContext>(options =>
+        {
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+        });
+
+        services.AddControllers();
+    }
     public class Startup
     {
         public Startup(IConfiguration configuration)
