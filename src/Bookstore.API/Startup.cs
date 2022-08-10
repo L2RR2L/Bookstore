@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Infrastructure.Context;
-
+using Microsoft.EntityFrameworkCore.Design;
 namespace Bookstore.API
 {
     public class Startup
